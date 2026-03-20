@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { I18nProvider } from '@/components/I18nProvider';
+import AppShell from '@/components/AppShell';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased font-sans">
-        <I18nProvider>{children}</I18nProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

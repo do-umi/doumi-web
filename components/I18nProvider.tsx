@@ -7,13 +7,10 @@ import {
   useEffect,
   useMemo,
   useState,
+  type ReactNode,
 } from 'react';
-import {
-  messages,
-  STORAGE_KEY,
-  type Locale,
-  type MessageKey,
-} from '@/lib/i18n-messages';
+import { messages, STORAGE_KEY } from '@/lib/i18n-messages';
+import type { Locale, MessageKey } from '@/lib/i18n-messages';
 
 type I18nContextValue = {
   locale: Locale;
@@ -31,7 +28,7 @@ export function useI18n() {
   return ctx;
 }
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
+export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('ko');
 
   useEffect(() => {
