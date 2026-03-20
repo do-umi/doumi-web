@@ -17,4 +17,4 @@ jobs:
             export PATH=$PATH:/usr/local/bin:/usr/bin
             cd /project/doumi-web
             git pull origin main
-            docker compose restart || docker-compose restart
+            docker compose up -d --build || docker-compose up -d --build
