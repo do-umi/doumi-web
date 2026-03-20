@@ -14,7 +14,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 62802
           script: |
+            export PATH=$PATH:/usr/local/bin:/usr/bin
             cd /project/doumi-web
             git pull origin main
             cd /project
-            docker-compose restart
+            docker compose restart || docker-compose restart
