@@ -1,0 +1,16 @@
+# 로컬 개발용 — Next.js dev 서버 (hot reload)
+# 사용: docker-compose -f docker-compose.dev.yml up
+version: "3.8"
+
+services:
+  dev:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - WATCHPACK_POLLING=true

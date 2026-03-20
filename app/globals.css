@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --doumi-navy: #1e3a5f;
+  --doumi-blue: #0103c8;
+  --foreground: #1a1a1a;
+  --background: #ffffff;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* 고령자 UX: 본문 최소 20px, 버튼 최소 60px 권장 — 컴포넌트에서 적용 */

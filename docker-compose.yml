@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # 개발 시 로컬 Next.js만 띄울 때 사용 (docker-compose -f docker-compose.dev.yml up)
+  # dev:
+  #   image: node:20-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #   ports:
+  #     - "3000:3000"
+  #   command: sh -c "npm install && npm run dev"
+  #   environment:
+  #     - WATCHPACK_POLLING=true
