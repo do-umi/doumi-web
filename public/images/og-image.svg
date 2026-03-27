@@ -1,0 +1,9 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#121212"/>
+  <g transform="translate(480, 195) scale(4)">
+    <path d="M0 0.039772V24.4662L51.2677 24.4264V8.95688e-07L0 0.039772Z" fill="#0103C8"/>
+    <path d="M9.05859 19.1353V43.5617L59.6552 43.5225V19.0961L9.05859 19.1353Z" fill="#0103C8"/>
+  </g>
+  <text x="600" y="480" text-anchor="middle" fill="white" font-family="sans-serif" font-size="48" font-weight="bold">Doumi</text>
+  <text x="600" y="530" text-anchor="middle" fill="#999" font-family="sans-serif" font-size="24">AI Web Agent for Digital Inclusion</text>
+</svg>
