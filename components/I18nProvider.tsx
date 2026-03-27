@@ -63,7 +63,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const dir = useMemo(
-    () => (RTL_LOCALES.includes(locale) ? 'rtl' : 'ltr'),
+    () => (RTL_LOCALES.includes(locale) ? 'rtl' as const : 'ltr' as const),
     [locale],
   );
 
