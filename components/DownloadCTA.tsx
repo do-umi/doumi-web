@@ -25,7 +25,7 @@ export default function DownloadCTA() {
             href="#"
             className="inline-flex min-h-[60px] min-w-[200px] items-center justify-center gap-2 rounded-lg bg-[#333333] px-8 py-4 text-center font-medium text-white transition hover:bg-black"
           >
-            <svg className="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M3 12V6.75l6-1.32v6.48L3 12zm6.98.09l.02 6.63l-6 .84V12.9l5.98-.81zM10.7 5.09L17.73 4v8h-7.03V5.09zM17.73 12.25V20.3l-7.03-1.01V12.25h7.03zM3.24 18.54l-.24-.03V13h6v5.19l-5.76.35z"/></svg>
+            <svg className="h-7 w-7 shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden><path d="M6.555 1.375L0 2.237v5.45h6.555zM0 8.313v5.45l6.555.862V8.313zM7.278 0v7.688H16V.894zM16 8.313H7.278V16L16 15.106z"/></svg>
             {t('download_windows')}
           </a>
         </div>

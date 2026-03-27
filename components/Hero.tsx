@@ -19,7 +19,7 @@ export default function Hero() {
           <iframe
             src={SPLINE_EMBED_URL}
             title={t('hero_iframe_title')}
-            className="pointer-events-none absolute inset-0 h-full w-full border-0"
+            className="absolute inset-0 h-full w-full border-0"
             allow="autoplay; fullscreen"
             loading="lazy"
             tabIndex={-1}
