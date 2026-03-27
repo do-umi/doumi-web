@@ -53,7 +53,7 @@ function TeamAvatar({
   if (failed) {
     return (
       <div
-        className={`flex h-28 w-28 items-center justify-center rounded-full ${color} text-2xl font-bold text-white sm:h-32 sm:w-32`}
+        className={`flex h-36 w-36 items-center justify-center rounded-full ${color} text-2xl font-bold text-white sm:h-40 sm:w-40`}
         aria-label={alt}
       >
         {initials}
@@ -68,7 +68,7 @@ function TeamAvatar({
       alt={alt}
       width={128}
       height={128}
-      className="h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
+      className="h-36 w-36 rounded-full object-cover sm:h-40 sm:w-40"
       onError={() => setFailed(true)}
     />
   );

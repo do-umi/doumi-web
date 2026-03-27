@@ -31,7 +31,7 @@ export function useI18n() {
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('ko');
+  const [locale, setLocaleState] = useState<Locale>('en');
 
   useEffect(() => {
     try {
