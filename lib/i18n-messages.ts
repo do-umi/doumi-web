@@ -27,7 +27,7 @@ const _ko = {
   download_windows: 'Windows 다운로드',
   footer_school: '선린인터넷고등학교',
   footer_program: '정보보호과 응용프로그래밍개발 프로젝트',
-  footer_credits: '© Development and Design by 이동건 이윤호 장수하',
+  footer_credits: '© Development and Design by 이동건 이윤호 정수아',
   lang_sr: '언어 선택',
   res_changelog: '변경 로그',
   res_docs: '문서',
@@ -88,7 +88,7 @@ const _en: Record<keyof typeof _ko, string> = {
   download_windows: 'Download for Windows',
   footer_school: 'Sunrin Internet High School',
   footer_program: 'Information Security — Application Development Project',
-  footer_credits: '© Development and Design by Lee Donggeon, Lee Yunho, and Jung Suha',
+  footer_credits: '© Development and Design by Lee Donggeon, Lee Yunho, and Jung Sua',
   lang_sr: 'Choose language',
   res_changelog: 'Changelog',
   res_docs: 'Docs',
@@ -149,7 +149,7 @@ const _ar: Record<keyof typeof _ko, string> = {
   download_windows: 'تحميل لنظام Windows',
   footer_school: 'مدرسة سونرين الثانوية للإنترنت',
   footer_program: 'أمن المعلومات — مشروع تطوير التطبيقات',
-  footer_credits: '© التطوير والتصميم بواسطة لي دونغ‌غون، لي يون‌هو، وجونغ سوها',
+  footer_credits: '© التطوير والتصميم بواسطة لي دونغ‌غون، لي يون‌هو، وجونغ سوا',
   lang_sr: 'اختر اللغة',
   res_changelog: 'سجل التغييرات',
   res_docs: 'المستندات',
@@ -183,7 +183,7 @@ const _ar: Record<keyof typeof _ko, string> = {
   team_donggeon_role: 'تخطيط · تطوير',
   team_yunho_name: 'لي يون‌هو',
   team_yunho_role: 'تطوير',
-  team_suha_name: 'جونغ سوها',
+  team_suha_name: 'جونغ سوا',
   team_suha_role: 'تصميم · تطوير',
 };
 
@@ -210,7 +210,7 @@ const _ja: Record<keyof typeof _ko, string> = {
   download_windows: 'Windows版ダウンロード',
   footer_school: 'ソンリンインターネット高等学校',
   footer_program: '情報保護科 アプリケーション開発プロジェクト',
-  footer_credits: '© Development and Design by イ・ドンゴン、イ・ユンホ、チャン・スハ',
+  footer_credits: '© Development and Design by イ・ドンゴン、イ・ユンホ、チョン・スア',
   lang_sr: '言語選択',
   res_changelog: '変更ログ',
   res_docs: 'ドキュメント',
@@ -244,7 +244,7 @@ const _ja: Record<keyof typeof _ko, string> = {
   team_donggeon_role: '企画 · 開発',
   team_yunho_name: 'イ・ユンホ',
   team_yunho_role: '開発',
-  team_suha_name: 'チャン・スハ',
+  team_suha_name: 'チョン・スア',
   team_suha_role: 'デザイン · 開発',
 };
 
@@ -271,7 +271,7 @@ const _th: Record<keyof typeof _ko, string> = {
   download_windows: 'ดาวน์โหลดสำหรับ Windows',
   footer_school: 'โรงเรียนมัธยมซอนรินอินเทอร์เน็ต',
   footer_program: 'ความปลอดภัยสารสนเทศ — โปรเจกต์พัฒนาแอปพลิเคชัน',
-  footer_credits: '© พัฒนาและออกแบบโดย อี ดงกอน, อี ยุนโฮ และ จอง ซูฮา',
+  footer_credits: '© พัฒนาและออกแบบโดย อี ดงกอน, อี ยุนโฮ และ จอง ซูอา',
   lang_sr: 'เลือกภาษา',
   res_changelog: 'บันทึกการเปลี่ยนแปลง',
   res_docs: 'เอกสาร',
@@ -305,7 +305,7 @@ const _th: Record<keyof typeof _ko, string> = {
   team_donggeon_role: 'วางแผน · พัฒนา',
   team_yunho_name: 'อี ยุนโฮ',
   team_yunho_role: 'พัฒนา',
-  team_suha_name: 'จอง ซูฮา',
+  team_suha_name: 'จอง ซูอา',
   team_suha_role: 'ออกแบบ · พัฒนา',
 };
 
@@ -332,7 +332,7 @@ const _zh: Record<keyof typeof _ko, string> = {
   download_windows: '下载 Windows 版',
   footer_school: '宣麟互联网高中',
   footer_program: '信息安全科 应用程序开发项目',
-  footer_credits: '© 开发和设计：李东建、李允浩、张秀河',
+  footer_credits: '© 开发和设计：李东建、李允浩、郑秀雅',
   lang_sr: '选择语言',
   res_changelog: '更新日志',
   res_docs: '文档',
@@ -366,7 +366,7 @@ const _zh: Record<keyof typeof _ko, string> = {
   team_donggeon_role: '策划 · 开发',
   team_yunho_name: '李允浩',
   team_yunho_role: '开发',
-  team_suha_name: '张秀河',
+  team_suha_name: '郑秀雅',
   team_suha_role: '设计 · 开发',
 };
 
@@ -393,7 +393,7 @@ const _fr: Record<keyof typeof _ko, string> = {
   download_windows: 'Télécharger pour Windows',
   footer_school: 'Lycée Sunrin Internet',
   footer_program: 'Sécurité informatique — Projet de développement applicatif',
-  footer_credits: '© Développement et design par Lee Donggeon, Lee Yunho et Jung Suha',
+  footer_credits: '© Développement et design par Lee Donggeon, Lee Yunho et Jung Sua',
   lang_sr: 'Choisir la langue',
   res_changelog: 'Journal des modifications',
   res_docs: 'Documentation',
@@ -454,7 +454,7 @@ const _ru: Record<keyof typeof _ko, string> = {
   download_windows: 'Скачать для Windows',
   footer_school: 'Интернет-школа Сонрин',
   footer_program: 'Информационная безопасность — проект разработки приложений',
-  footer_credits: '© Разработка и дизайн: Ли Донгон, Ли Юнхо и Чон Суха',
+  footer_credits: '© Разработка и дизайн: Ли Донгон, Ли Юнхо и Чон Суа',
   lang_sr: 'Выбор языка',
   res_changelog: 'Журнал изменений',
   res_docs: 'Документация',
@@ -488,7 +488,7 @@ const _ru: Record<keyof typeof _ko, string> = {
   team_donggeon_role: 'Планирование · Разработка',
   team_yunho_name: 'Ли Юнхо',
   team_yunho_role: 'Разработка',
-  team_suha_name: 'Чон Суха',
+  team_suha_name: 'Чон Суа',
   team_suha_role: 'Дизайн · Разработка',
 };
 
