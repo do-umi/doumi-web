@@ -31,7 +31,7 @@ const TEAM: {
     nameKey: 'team_suha_name',
     roleKey: 'team_suha_role',
     photo: '/images/team/suha.jpg',
-    initials: 'SH',
+    initials: 'SA',
     color: 'bg-[#333333]',
   },
 ];

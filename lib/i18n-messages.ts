@@ -58,11 +58,11 @@ const _ko = {
   about_team_title: '팀',
   about_team_body: '선린인터넷고등학교 정보보호과 응용프로그래밍개발 프로젝트입니다.',
   team_donggeon_name: '이동건',
-  team_donggeon_role: '기획 · 개발',
-  team_yunho_name: '이윤호',
-  team_yunho_role: '개발',
-  team_suha_name: '장수하',
-  team_suha_role: '디자인 · 개발',
+  team_donggeon_role: '프로젝트 디자인, Chrome extension 개발',
+  team_yunho_name: '이윤호 (팀장)',
+  team_yunho_role: '인프라, 백엔드 개발, 발표',
+  team_suha_name: '정수아',
+  team_suha_role: '메인 사이트 개발, 기획서 작성',
 } as const;
 
 const _en: Record<keyof typeof _ko, string> = {
@@ -119,11 +119,11 @@ const _en: Record<keyof typeof _ko, string> = {
   about_team_title: 'Team',
   about_team_body: 'An Application Development project from the Information Security department at Sunrin Internet High School.',
   team_donggeon_name: 'Lee Donggeon',
-  team_donggeon_role: 'Planning · Development',
-  team_yunho_name: 'Lee Yunho',
-  team_yunho_role: 'Development',
-  team_suha_name: 'Jung Suha',
-  team_suha_role: 'Design · Development',
+  team_donggeon_role: 'Project Design, Chrome Extension Dev',
+  team_yunho_name: 'Lee Yunho (Lead)',
+  team_yunho_role: 'Infra, Backend Dev, Presentation',
+  team_suha_name: 'Jung Sua',
+  team_suha_role: 'Main Site Dev, Project Planning',
 };
 
 const _ar: Record<keyof typeof _ko, string> = {
@@ -425,9 +425,9 @@ const _fr: Record<keyof typeof _ko, string> = {
   about_team_body: "Projet de développement applicatif du département Sécurité informatique du Lycée Sunrin Internet.",
   team_donggeon_name: 'Lee Donggeon',
   team_donggeon_role: 'Planification · Développement',
-  team_yunho_name: 'Lee Yunho',
+  team_yunho_name: 'Lee Yunho (Lead)',
   team_yunho_role: 'Développement',
-  team_suha_name: 'Jung Suha',
+  team_suha_name: 'Jung Sua',
   team_suha_role: 'Design · Développement',
 };
 
