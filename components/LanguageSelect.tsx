@@ -7,7 +7,14 @@ import type { Locale } from '@/lib/i18n-messages';
 const LOCALES: { code: Locale; label: string; short: string }[] = [
   { code: 'ko', label: '한국어', short: 'KO' },
   { code: 'en', label: 'English', short: 'EN' },
+  { code: 'ja', label: '日本語', short: 'JA' },
+  { code: 'zh', label: '中文', short: 'ZH' },
+  { code: 'th', label: 'ไทย', short: 'TH' },
+  { code: 'fr', label: 'Français', short: 'FR' },
+  { code: 'ru', label: 'Русский', short: 'RU' },
   { code: 'ar', label: 'العربية', short: 'AR' },
+  { code: 'asm', label: 'Assembly', short: 'ASM' },
+  { code: 'bin', label: '01000010', short: 'BIN' },
 ];
 
 export default function LanguageSelect() {
@@ -77,13 +84,13 @@ export default function LanguageSelect() {
           id="lang-select-list"
           role="listbox"
           aria-labelledby="lang-select-button"
-          className="absolute right-0 z-[100] mt-1 min-w-[9rem] overflow-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg rtl:left-0 rtl:right-auto"
+          className="absolute right-0 z-[100] mt-1 max-h-72 min-w-[9rem] overflow-y-auto overflow-x-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg"
         >
           {LOCALES.map(({ code, label }) => (
             <li key={code} role="option" aria-selected={locale === code}>
               <button
                 type="button"
-                className={`flex w-full px-3 py-2 text-left text-sm hover:bg-gray-50 rtl:text-right ${
+                className={`flex w-full px-3 py-2 text-left text-sm hover:bg-gray-50 ${
                   locale === code ? 'bg-gray-50 font-medium text-black' : 'text-[#333333]'
                 }`}
                 onClick={() => {

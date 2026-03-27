@@ -1,7 +1,78 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { useI18n } from '@/components/I18nProvider';
+import type { MessageKey } from '@/lib/i18n-messages';
+
+/* ── Team data ── */
+const TEAM: {
+  nameKey: MessageKey;
+  roleKey: MessageKey;
+  photo: string;
+  initials: string;
+  color: string;
+}[] = [
+  {
+    nameKey: 'team_donggeon_name',
+    roleKey: 'team_donggeon_role',
+    photo: '/images/team/donggeon.jpg',
+    initials: 'DG',
+    color: 'bg-[#0103C8]',
+  },
+  {
+    nameKey: 'team_yunho_name',
+    roleKey: 'team_yunho_role',
+    photo: '/images/team/yunho.jpg',
+    initials: 'YH',
+    color: 'bg-[#1e3a5f]',
+  },
+  {
+    nameKey: 'team_suha_name',
+    roleKey: 'team_suha_role',
+    photo: '/images/team/suha.jpg',
+    initials: 'SH',
+    color: 'bg-[#333333]',
+  },
+];
+
+/* ── Avatar with fallback ── */
+function TeamAvatar({
+  src,
+  initials,
+  color,
+  alt,
+}: {
+  src: string;
+  initials: string;
+  color: string;
+  alt: string;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div
+        className={`flex h-28 w-28 items-center justify-center rounded-full ${color} text-2xl font-bold text-white sm:h-32 sm:w-32`}
+        aria-label={alt}
+      >
+        {initials}
+      </div>
+    );
+  }
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      width={128}
+      height={128}
+      className="h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function AboutPage() {
   const { t } = useI18n();
@@ -75,6 +146,29 @@ export default function AboutPage() {
         <p className="mt-4 leading-relaxed text-[#333]">
           {t('about_team_body')}
         </p>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          {TEAM.map(({ nameKey, roleKey, photo, initials, color }) => {
+            const name = t(nameKey);
+            return (
+              <div
+                key={nameKey}
+                className="flex flex-col items-center text-center"
+              >
+                <TeamAvatar
+                  src={photo}
+                  initials={initials}
+                  color={color}
+                  alt={name}
+                />
+                <h3 className="mt-4 text-base font-semibold text-[#111]">
+                  {name}
+                </h3>
+                <p className="mt-1 text-sm text-[#555]">{t(roleKey)}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
 
       {/* CTA */}
