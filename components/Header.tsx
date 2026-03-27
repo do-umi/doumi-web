@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState, type MouseEvent } from 'react';
+import { useEffect, useState, useRef, useCallback, type MouseEvent } from 'react';
 import LanguageSelect from './LanguageSelect';
 import { useI18n } from './I18nProvider';
 import {
@@ -12,10 +12,12 @@ import {
   TERMS_NAV,
 } from '@/lib/site-nav';
 
-function Chevron() {
+type DropdownId = 'guide' | 'terms' | null;
+
+function Chevron({ open }: { open?: boolean }) {
   return (
     <svg
-      className="h-4 w-4 shrink-0 transition-transform duration-150 group-hover:rotate-180 group-focus-within:rotate-180"
+      className={`h-4 w-4 shrink-0 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden
@@ -53,8 +55,47 @@ export default function Header() {
   const [mobileGuideOpen, setMobileGuideOpen] = useState(false);
   const [mobileTermsOpen, setMobileTermsOpen] = useState(false);
 
+  /* ── desktop dropdown state (only one at a time) ── */
+  const [openDropdown, setOpenDropdown] = useState<DropdownId>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navRef = useRef<HTMLUListElement>(null);
+
+  const scheduleClose = useCallback(() => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 120);
+  }, []);
+
+  const cancelClose = useCallback(() => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const handleDropdownEnter = useCallback(
+    (id: DropdownId) => {
+      cancelClose();
+      setOpenDropdown(id);
+    },
+    [cancelClose],
+  );
+
+  const handleDropdownLeave = useCallback(() => {
+    scheduleClose();
+  }, [scheduleClose]);
+
+  /* close desktop dropdown on outside click */
+  useEffect(() => {
+    function onPointerDown(e: PointerEvent) {
+      if (navRef.current?.contains(e.target as Node)) return;
+      setOpenDropdown(null);
+    }
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, []);
+
   useEffect(() => {
     setMenuOpen(false);
+    setOpenDropdown(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -112,8 +153,12 @@ export default function Header() {
           </Link>
         </div>
 
+        {/* ── Desktop nav ── */}
         <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
-          <ul className="relative flex items-center gap-6 whitespace-nowrap lg:gap-8">
+          <ul
+            ref={navRef}
+            className="relative flex items-center gap-6 whitespace-nowrap lg:gap-8"
+          >
             <li>
               <Link
                 href="/about"
@@ -122,16 +167,27 @@ export default function Header() {
                 {t('nav_about')}
               </Link>
             </li>
-            <li className="group relative focus-within:z-[130]">
+
+            {/* Guide dropdown */}
+            <li
+              className="relative"
+              onMouseEnter={() => handleDropdownEnter('guide')}
+              onMouseLeave={handleDropdownLeave}
+            >
               <Link
                 href={GUIDE_FIRST_HREF}
                 className="flex items-center gap-1 text-sm text-[#333333] transition hover:text-black lg:text-base"
+                onFocus={() => handleDropdownEnter('guide')}
               >
                 {t('nav_guide')}
-                <Chevron />
+                <Chevron open={openDropdown === 'guide'} />
               </Link>
               <div
-                className="pointer-events-none absolute left-1/2 top-full z-[120] w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100"
+                className={`absolute left-1/2 top-full z-[120] w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2 transition-opacity duration-150 ${
+                  openDropdown === 'guide'
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
+                }`}
                 role="menu"
                 aria-label={t('nav_guide')}
               >
@@ -151,16 +207,27 @@ export default function Header() {
                 </div>
               </div>
             </li>
-            <li className="group relative focus-within:z-[130]">
+
+            {/* Terms dropdown */}
+            <li
+              className="relative"
+              onMouseEnter={() => handleDropdownEnter('terms')}
+              onMouseLeave={handleDropdownLeave}
+            >
               <Link
                 href={TERMS_FIRST_HREF}
                 className="flex items-center gap-1 text-sm text-[#333333] transition hover:text-black lg:text-base"
+                onFocus={() => handleDropdownEnter('terms')}
               >
                 {t('nav_terms')}
-                <Chevron />
+                <Chevron open={openDropdown === 'terms'} />
               </Link>
               <div
-                className="pointer-events-none absolute left-1/2 top-full z-[120] w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100"
+                className={`absolute left-1/2 top-full z-[120] w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2 transition-opacity duration-150 ${
+                  openDropdown === 'terms'
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
+                }`}
                 role="menu"
                 aria-label={t('nav_terms')}
               >
@@ -230,6 +297,7 @@ export default function Header() {
         </div>
       </nav>
 
+      {/* ── Mobile drawer ── */}
       {menuOpen ? (
         <>
           <button
