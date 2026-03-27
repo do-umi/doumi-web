@@ -65,7 +65,7 @@ const _ko = {
   team_suha_role: '디자인 · 개발',
 } as const;
 
-const _en: typeof _ko = {
+const _en: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — AI web agent for digitally excluded users',
   nav_about: 'Product',
   nav_guide: 'Resources',
@@ -126,7 +126,7 @@ const _en: typeof _ko = {
   team_suha_role: 'Design · Development',
 };
 
-const _ar: typeof _ko = {
+const _ar: Record<keyof typeof _ko, string> = {
   metaTitle: 'دومي — وكيل ويب ذكي للمستخدمين المستبعدين رقمياً',
   nav_about: 'المنتج',
   nav_guide: 'الموارد',
@@ -187,7 +187,7 @@ const _ar: typeof _ko = {
   team_suha_role: 'تصميم · تطوير',
 };
 
-const _ja: typeof _ko = {
+const _ja: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — デジタル弱者のためのAIウェブエージェント',
   nav_about: '製品紹介',
   nav_guide: 'ガイド',
@@ -248,7 +248,7 @@ const _ja: typeof _ko = {
   team_suha_role: 'デザイン · 開発',
 };
 
-const _th: typeof _ko = {
+const _th: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — ตัวแทนเว็บ AI สำหรับผู้ด้อยโอกาสทางดิจิทัล',
   nav_about: 'ผลิตภัณฑ์',
   nav_guide: 'คู่มือ',
@@ -309,7 +309,7 @@ const _th: typeof _ko = {
   team_suha_role: 'ออกแบบ · พัฒนา',
 };
 
-const _zh: typeof _ko = {
+const _zh: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — 面向数字弱势群体的AI网页代理',
   nav_about: '产品介绍',
   nav_guide: '指南',
@@ -370,7 +370,7 @@ const _zh: typeof _ko = {
   team_suha_role: '设计 · 开发',
 };
 
-const _fr: typeof _ko = {
+const _fr: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — Agent web IA pour les exclus du numérique',
   nav_about: 'Produit',
   nav_guide: 'Ressources',
@@ -431,7 +431,7 @@ const _fr: typeof _ko = {
   team_suha_role: 'Design · Développement',
 };
 
-const _ru: typeof _ko = {
+const _ru: Record<keyof typeof _ko, string> = {
   metaTitle: 'Doumi — ИИ веб-агент для цифрово изолированных пользователей',
   nav_about: 'Продукт',
   nav_guide: 'Ресурсы',
@@ -492,7 +492,7 @@ const _ru: typeof _ko = {
   team_suha_role: 'Дизайн · Разработка',
 };
 
-const _asm: typeof _ko = {
+const _asm: Record<keyof typeof _ko, string> = {
   metaTitle: 'MOV AX, DOUMI ; AI web agent',
   nav_about: 'INT 0x21',
   nav_guide: 'JMP GUIDE',
@@ -553,7 +553,7 @@ const _asm: typeof _ko = {
   team_suha_role: 'DESIGNER · CODER',
 };
 
-const _bin: typeof _ko = {
+const _bin: Record<keyof typeof _ko, string> = {
   metaTitle: '01000100 01101111 01110101 01101101 01101001',
   nav_about: '01001001 01001110 01000110 01001111',
   nav_guide: '01001000 01000101 01001100 01010000',
